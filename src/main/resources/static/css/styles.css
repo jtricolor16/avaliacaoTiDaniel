@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+.checkbox{
+	transform: scale(1.5) !important;
+}
+
+ul{
+	align-items: center;
+ 	justify-content: center;
+}
+
+.rem4{
+	height:4rem !important;
+}
+
+.checkbox2{
+	transform: scale(2) !important;
+}
+
+li{
+	text-align:center;
+	font-size:1.2rem;
+	padding-right:1%;
+	padding-left:1%;
+}
+
+.alinharJustificadoEsquerda{
+	justify-content: left !important;
+}
+
+.paddingLeft0{
+	padding-left: 0 !important;
+}
+
+.pesquisaBordas{
+	border: 1px solid black!important;
+	border-radius: 16px;
+	padding-left:1%;
+	padding-top:1%;
+	padding-bottom:1%;
+	width:100%;
+	margin-bottom: 3rem;
+}
+
+input{
+	width:100% !important;
+}
+
+.erroInput{
+	background-color: #251a1a6b;
+}
+
+.nomePrograma{
+	height:6rem;
+	background-color: black;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	margin-bottom: 2rem;
+}
+
+h5{
+	margin-bottom:2rem !important;
+}
+
+h1{
+	text-align:center !important;
+	color: white;	
+}
+
+.marginTop2{
+	margin-top: 2rem;
+}
+
+.paddingTop2{
+	padding-top: 2% !important;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+a{
+	color:black;
+}
+
+a:hover {
+    text-decoration: none;
+}

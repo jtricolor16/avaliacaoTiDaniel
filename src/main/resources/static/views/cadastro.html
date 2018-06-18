@@ -1,0 +1,76 @@
+<meta charset="utf-8"/>
+<h2 ng-show="cc.pessoa.id==undefined">Cadastrar</h2>
+<h2 ng-show="cc.pessoa.id!=undefined">Editar</h2>
+<form ng-submit="cc.salvar()" name="cc.cadastroForm">
+	<div class="form-row marginTop2">
+		<div class="col-md-6">
+			<label for="nome" class="bold">Nome:*</label>
+			<input class="form-control" id="nome" name="nome" type="text" ng-model="cc.pessoa.nome" ng-required="true"></p>
+		</div>
+		<div class="col-md-3">
+			<label for="cpf"><span class="bold">CPF:*</span> <span ng-if="cc.cadastroForm.cpf.$invalid &amp;&amp; cc.cadastroForm.cpf.$touched" "> Inválido</span></label>
+			<input ng-class="cc.cadastroForm.cpf.$invalid &amp;&amp; cc.cadastroForm.cpf.$touched ? 'erroInput' : ''" class="form-control" id="cpf" name="cpf" type="text" ng-model="cc.pessoa.cpf" ng-required="true" ng-maxlength="15" ui-mask="999.999.999-99" ng-blur="cc.buscarPeloCpf()">
+		</div>
+		<div class="col-md-3">
+			<label for="dataNascimento" class="bold">Data de Nascimento:*</label>
+			<input class="form-control" id="dataNascimento" name="dataNascimento" type="date" ng-model="cc.pessoa.dataNascimento" ng-required="true"/>
+		</div>
+	</div>
+	<div class="form-row marginTop2">
+		<div class="col-md-9">
+			<label for="cpf"><span class="bold">Email:*</span> <span ng-if="cc.cadastroForm.email.$invalid &amp;&amp; cc.cadastroForm.email.$touched" "> Inválido</span></label>
+			<input ng-class="cc.cadastroForm.email.$invalid &amp;&amp; cc.cadastroForm.email.$touched ? 'erroInput' : ''" class="form-control" class="form=comtrol" id="email" name="email" type="email" ng-model="cc.pessoa.email" ng-required="true" ng-pattern="emailFormat" ng-blur="cc.buscarPeloEmail()">
+		</div>
+		<div class="col-md-3">
+			<label for="sexo" class="bold">Sexo*</label>
+			<div class="radio-inline col-md-12 row">
+				<div class="col-md-4" style="padding:0 !important;">
+					<input class="checkbox" id="sexo" name="sexo" type="radio" value="Masculino" ng-model="cc.pessoa.sexo">
+				</div>
+				<div class="col-md-8" style="padding:0 !important;">
+					<span>Masculino</span>
+				</div>
+				<div class="col-md-4" style="padding:0 !important;">
+					<input class="checkbox" id="sexo" name="sexo" type="radio" value="Feminino" ng-model="cc.pessoa.sexo">
+				</div>
+				<div class="col-md-8" style="padding:0 !important;">
+					<span>Feminino</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-row marginTop2">
+		<div class="col-md-6">
+			<label for="estadoCivilM" class="bold">Estado Civil*:</label>
+			<select class="form-control" id="estadoCivilM" name="estadoCivilM" ng-model="cc.pessoa.estadoCivil" ng-show="cc.pessoa.sexo=='Masculino'" ng-required="cc.pessoa.sexo=='Masculino' ? 'true' : 'false'">
+				<option value="" selected disabled>Escolha o seu estado civil</option>
+				<option value="Solteiro">Solteiro</option>
+				<option value="Casado">Casado</option>
+				<option value="Divorciado">Divorciado</option>
+				<option value="Viúvo">Viúvo</option>
+				<option value="Separado">Separado</option>
+			</select>
+			<select class="form-control" id="estadoCivilF" name="estadoCivilF" ng-model="cc.pessoa.estadoCivil" ng-show="cc.pessoa.sexo=='Feminino'" ng-required="cc.pessoa.sexo=='Feminino' ? 'true' : 'false'">
+				<option value="" selected disabled>Escolha o seu estado civil</option>
+				<option value="Solteiro">Solteira</option>
+				<option value="Casado">Casada</option>
+				<option value="Divorciado">Divorciada</option>
+				<option value="Viúvo">Viúva</option>
+				<option value="Separado">Separada</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<label for="ativo" class="bold">Ativ<span ng-show="cc.pessoa.sexo=='Masculino'">o</span><span ng-show="cc.pessoa.sexo=='Feminino'">a</span>*:</label>
+			<div class="col-md-12 row">
+				<input class="checkbox2" id="ativo" name="ativo" type="checkbox" ng-checked="cc.pessoa.ativo" ng-click="cc.valorAtivo()">
+			</div>
+		</div>
+	</div>
+	<div class="form-row marginTop2">
+		<div class="col-md-2">
+			<button ng-show="cc.pessoa.id==undefined" ng-disabled="cc.cadastroForm.$invalid" class="btn btn-dark rem4"><i class="fas fa-save"></i><span> Cadastrar</span></button>
+			<button ng-show="cc.pessoa.id!=undefined" ng-disabled="cc.cadastroForm.$invalid" class="btn btn-dark rem4"><i class="fas fa-save"></i><span> Alterar</span></button>
+		</div>
+	</div>
+	
+</form>
