@@ -1,6 +1,20 @@
-#Some setup information :).
+#SISTEMA CRIADO PARA PROCESSO SELETIVO
 
-##Spring JPA Setup
-You need to change the **application.properties** and configure the login, password and url of your database. 
-  	
+#INFORMAÇÕES IMPORTANTES:
+
+PROJETO MAVEN
+
+FRAMEWORK BACK-END: SPRING BOOT
+
+FRAMEWORK FRONT-END: ANGULARJS
+
+ORM: SPRING DATA
+
+URL DE ACESSO EM AMBIENTE LOCAL: http://localhost:8080/tiDaniel
+
+BANCO DE DADOS UTILIZADO: MYSQL
+
+INFORMAÇÕES DE CONFIGURAÇÃO DO BANCO ESTÃO EM application.properties.
+
+
 
