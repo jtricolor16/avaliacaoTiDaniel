@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module('DanielTiApp').controller('CadastroController', function($http, $scope, $log, $routeParams, $location){
+	angular.module('DanielTiApp').controller('CadastroController', function($http, $rootScope, $log, $routeParams, $location){
 		
 		var self = this;
 
@@ -12,7 +12,7 @@
 		
 		self.pessoa.ativo=true;
 		
-		$scope.emailFormat = /\S+@\S+\.\S+/;
+		$rootScope.emailFormat = /\S+@\S+\.\S+/;
 		
 		self.carregarPessoa = function(){
 			if($routeParams.id!=undefined){
@@ -24,7 +24,7 @@
 	    		}).
 	    		error(function(results){
 	    			$log.log(results);
-	    			self.message='Error!';
+	    			$rootScope.mensagem='Erro ao carregar usuário';
 	    		})
 			}
 		}
@@ -42,16 +42,20 @@
     		success(function(results){
     			$log.log(results);
     			if(results==true){
-    				self.message='Success!'
+    				if(self.pessoa.id==undefined)
+    					$rootScope.mensagem='Cadastro feito com sucesso!';
+    				else
+    					$rootScope.mensagem='Alteração feita com sucesso!';
+    				
     	    		$location.path("/tiDaniel");
     			}else{
-    				self.message='Error!';
+    				$rootScope.mensagem='Erro ao salvar!';
     			}
     			
     		}).
     		error(function(results){
     			$log.log(results);
-    			self.message='Error!';
+    			$rootScope.mensagem='Erro ao salvar!';
     		})
 		}
 		

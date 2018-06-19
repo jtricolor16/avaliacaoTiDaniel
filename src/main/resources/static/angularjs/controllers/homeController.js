@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	angular.module('DanielTiApp').controller('HomeController', function($scope, $http, $log, $location, $localStorage){
+	angular.module('DanielTiApp').controller('HomeController', function($rootScope, $http, $log, $location, $localStorage){
 		
 		var self=this;
 		
@@ -23,6 +23,10 @@
     		error(function(results){
     			$log.log(results);
     		})
+		}
+		
+		self.limparMensagem = function(){
+			$rootScope.mensagem=undefined;		
 		}
 		
 		self.carregarPessoas();
@@ -54,14 +58,14 @@
     				$log.log(results);
     				self.pessoasRemovidas=[];
         			self.carregarPessoas();
-        			self.message='Pessoa excluída com sucesso!';
+        			$rootScope.mensagem='Pessoa excluída com sucesso!';
     			}else{
-    				self.message='Erro ao excluir pessoa!';
+    				$rootScope.mensagem='Erro ao excluir pessoa!';
     			}
     		}).
     		error(function(results){
     			$log.log(results);
-    			self.message='Erro ao excluir pessoa!';
+    			$rootScope.mensagem='Erro ao excluir pessoa!';
     		})
 		}
 		
@@ -95,16 +99,16 @@
     		success(function(results){
     			if(results==true){
     				$log.log(results);
-        			self.message='Sucesso ao excluir pessoas!';
+    				$rootScope.mensagem='Sucesso ao excluir pessoas!';
         			self.pessoasRemovidas=[];
         			self.carregarPessoas();
     			}else{
-    				self.message='Erro ao excluir pessoas!';
+    				$rootScope.mensagem='Erro ao excluir pessoas!';
     			}
     		}).
     		error(function(results){
     			$log.log(results);
-    			self.message='Erro ao excluir pessoas!';
+    			$rootScope.mensagem='Erro ao excluir pessoas!';
     		})
 		}
 		

@@ -19,7 +19,8 @@
 		
 	</form>
 </div>
-<a href="/tiDaniel/cadastrar"><button class="btn btn-dark"><i class="fas fa-user-plus"></i> Cadastrar</button></a> <button class="btn btn-dark" ng-click="hc.carregarPessoas()"><i class="fas fa-sync"></i> Atualizar</button><br/><br/>
+<rg-message message="{{mensagem}}"></rg-message>
+<a href="/tiDaniel/cadastrar"><button class="btn btn-dark" ng-click="hc.limparMensagem()"><i class="fas fa-user-plus"></i> Cadastrar</button></a> <button class="btn btn-dark" ng-click="hc.carregarPessoas(); hc.limparMensagem()"><i class="fas fa-sync"></i> Atualizar</button><br/><br/>
 <div>
 	<table style="width:100%"	class="table table-striped table-responsive" ng-show="hc.pessoas.size.length>0 ? 'true' : 'false'">
 		<thead class="table-dark bold" align="center">

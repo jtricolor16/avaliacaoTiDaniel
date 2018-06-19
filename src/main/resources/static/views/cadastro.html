@@ -1,6 +1,7 @@
 <meta charset="utf-8"/>
 <h2 ng-show="cc.pessoa.id==undefined">Cadastrar</h2>
 <h2 ng-show="cc.pessoa.id!=undefined">Editar</h2>
+<rg-message message="{{mensagem}}"></rg-message>
 <form ng-submit="cc.salvar()" name="cc.cadastroForm">
 	<div class="form-row marginTop2">
 		<div class="col-md-6">
@@ -19,7 +20,7 @@
 	<div class="form-row marginTop2">
 		<div class="col-md-9">
 			<label for="cpf"><span class="bold">Email:*</span> <span ng-if="cc.cadastroForm.email.$invalid &amp;&amp; cc.cadastroForm.email.$touched" "> Inválido</span></label>
-			<input ng-class="cc.cadastroForm.email.$invalid &amp;&amp; cc.cadastroForm.email.$touched ? 'erroInput' : ''" class="form-control" class="form=comtrol" id="email" name="email" type="email" ng-model="cc.pessoa.email" ng-required="true" ng-pattern="emailFormat" ng-blur="cc.buscarPeloEmail()">
+			<input placeholder="exemplo@email.com" ng-class="cc.cadastroForm.email.$invalid &amp;&amp; cc.cadastroForm.email.$touched ? 'erroInput' : ''" class="form-control" class="form=comtrol" id="email" name="email" type="email" ng-model="cc.pessoa.email" ng-required="true" ng-pattern="emailFormat" ng-blur="cc.buscarPeloEmail()">
 		</div>
 		<div class="col-md-3">
 			<label for="sexo" class="bold">Sexo*</label>
