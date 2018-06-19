@@ -24,9 +24,9 @@
 	<table style="width:100%"	class="table table-striped table-responsive" ng-show="hc.pessoas.size.length>0 ? 'true' : 'false'">
 		<thead class="table-dark bold" align="center">
 			<tr>
-			<form name="formCheckBoxAll">
-				<td style="width:10%"><input class="checkbox" name="checkbox" type="checkbox" ng-model="hc.pessoas.select" ng-click="hc.adicionarTudoParaRemocao()"></td>
-			</form>
+				<td style="width:10%">
+					<form name="formCheckBoxAll"><span>Selecionar</span><input class="checkbox" name="checkbox" type="checkbox" ng-model="hc.pessoas.select" ng-click="hc.adicionarTudoParaRemocao()"></form>
+				</td>
 				<td style="width:10%">Nome</td>
 				<td style="width:10%">CPF</td>
 				<td style="width:10%">Email</td>
