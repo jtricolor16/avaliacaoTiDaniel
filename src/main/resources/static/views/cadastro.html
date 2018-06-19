@@ -24,16 +24,16 @@
 		<div class="col-md-3">
 			<label for="sexo" class="bold">Sexo*</label>
 			<div class="radio-inline col-md-12 row">
-				<div class="col-md-4" style="padding:0 !important;">
-					<input class="checkbox" id="sexo" name="sexo" type="radio" value="Masculino" ng-model="cc.pessoa.sexo">
+				<div class="col-md-2" style="padding:0 !important;">
+					<input class="checkbox width50" id="sexo" name="sexo" type="radio" value="Masculino" ng-model="cc.pessoa.sexo">
 				</div>
-				<div class="col-md-8" style="padding:0 !important;">
+				<div class="col-md-10" style="padding:0 !important;">
 					<span>Masculino</span>
 				</div>
-				<div class="col-md-4" style="padding:0 !important;">
-					<input class="checkbox" id="sexo" name="sexo" type="radio" value="Feminino" ng-model="cc.pessoa.sexo">
+				<div class="col-md-2" style="padding:0 !important;">
+					<input class="checkbox width50" id="sexo" name="sexo" type="radio" value="Feminino" ng-model="cc.pessoa.sexo">
 				</div>
-				<div class="col-md-8" style="padding:0 !important;">
+				<div class="col-md-10" style="padding:0 !important;">
 					<span>Feminino</span>
 				</div>
 			</div>
@@ -59,10 +59,10 @@
 				<option value="Separado">Separada</option>
 			</select>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<label for="ativo" class="bold">Ativ<span ng-show="cc.pessoa.sexo=='Masculino'">o</span><span ng-show="cc.pessoa.sexo=='Feminino'">a</span>*:</label>
 			<div class="col-md-12 row">
-				<input class="checkbox2" id="ativo" name="ativo" type="checkbox" ng-checked="cc.pessoa.ativo" ng-click="cc.valorAtivo()">
+				<input class="checkbox2 width10 marginLeft1" id="ativo" name="ativo" type="checkbox" ng-checked="cc.pessoa.ativo" ng-click="cc.valorAtivo()">
 			</div>
 		</div>
 	</div>

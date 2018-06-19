@@ -23,6 +23,18 @@ li{
 	padding-left:1%;
 }
 
+.width50{
+	width: 50% !important;
+}
+
+.width10{
+	width: 10% !important;
+}
+
+.marginLeft1{
+	margin-left: 1rem !important;
+}
+
 .alinharJustificadoEsquerda{
 	justify-content: left !important;
 }
